@@ -1,0 +1,119 @@
+﻿<Window
+    x:Class="ENG.ParameterScanner.Revit.Addin.Views.MainForm"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    xmlns:local="clr-namespace:ENG.ParameterScanner.Revit.Addin.Views"
+    Title="Parameter Scanner"
+    x:Name="MainWindow"
+    WindowStartupLocation="CenterScreen"
+    ResizeMode="NoResize"
+    SizeToContent="Height"
+    Width="360px"
+    MinWidth="360px"
+    Style="{DynamicResource ENG_WindowStyle}"
+>
+    <StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="3 3 0 0">
+            <Button Style="{DynamicResource ENG_LogoButton}" Name="LogoButton" Click="LogoButton_Click" Width="40" Height="40">
+                <Image Source="/ENG.ParameterScanner.Revit.Addin;component/Assets/Icon_64x64.png"/>
+            </Button>
+            <Label
+                Style="{DynamicResource ENG_ActionButtons}"
+                Margin="0 -40 -262 -10"
+                HorizontalAlignment="Right"
+            >
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{DynamicResource ENG_ActionButton}" Margin="0 0 10 0" Name="ConfigButton" Click="ConfigButton_Click">
+                        <Image Source="/ENG.ParameterScanner.Revit.Addin;component/Assets/Icon_Config.png" />
+                    </Button>
+                    <Button Style="{DynamicResource ENG_ActionButton}" Name="CloseButton" Click="CloseButton_Click">
+                        <Image Source="/ENG.ParameterScanner.Revit.Addin;component/Assets/Icon_Close.png" />
+                    </Button>
+                </StackPanel>
+            </Label>
+            <StackPanel
+                Margin="10 -5 0 0"
+                AllowDrop="True"
+                PreviewMouseLeftButtonDown="Window_PreviewMouseLeftButtonDown"
+                PreviewMouseMove="Window_PreviewMouseMove"
+                PreviewMouseLeftButtonUp="Window_PreviewMouseLeftButtonUp"
+                Cursor="ScrollAll"
+            >
+                <Label Style="{DynamicResource ENG_TitleStyle}">
+                    Parameter Scanner
+                </Label>
+                <Label Style="{DynamicResource ENG_VersionStyle}" Margin="0 -5 0 0">
+                    v1.0.0.0
+                </Label>
+            </StackPanel>
+        </StackPanel>
+        
+        
+        <Label
+            Style="{DynamicResource ENG_VersionStyle}"
+            Margin="0 8 0 10" 
+            FontWeight="Bold"
+            Padding="3 10 0 5"
+        >
+            Complete the following fields
+        </Label>
+
+        <TextBox 
+            Style="{DynamicResource ENG_TextBox}"  
+            Tag="Parameter Name"
+            x:Name="ParameterName" 
+            Margin="0 0 0 10"
+            Text=""
+         />
+
+        <TextBox 
+            Style="{DynamicResource ENG_TextBox}"  
+            Tag="Parameter Value"
+            x:Name="ParameterValue" 
+            Margin="0 0 0 0"
+            Text=""
+         />
+
+        <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+
+            <Button
+                Name="IsolateInViewButton" 
+                Click="IsolateInViewButton_Click"
+                Style="{DynamicResource ENG_ButtonStyle}"  
+                Content="Isolate in View" 
+                Margin="0 0 48 0"
+                HorizontalAlignment="Left"
+                Background="Gray"
+            />
+            
+            <Button
+                Name="SelectItemsButton"
+                Click="SelectItemsButton_Click" 
+                Style="{DynamicResource ENG_ButtonStyle}"  
+                Content="Select Items" 
+                Margin="0"
+                HorizontalAlignment="Right"
+            />
+
+        </StackPanel>
+
+        <Label 
+            Style="{DynamicResource ENG_Label}"
+            Tag="Info"
+            x:Name="AddinAlerts" 
+            Margin="0 15 0 0"
+            Content=""
+         />
+
+    </StackPanel>
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+</Window>

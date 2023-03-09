@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>App</Name>
+		<Assembly>ENG.ParameterScanner.Revit.Addin/ENG.ParameterScanner.Revit.Addin.dll</Assembly>
+		<ClientId>64db036e-716b-406e-be89-569e6ad3f223</ClientId>
+		<FullClassName>ENG.ParameterScanner.Revit.Addin.App</FullClassName>
+		<VendorId>ENG</VendorId>
+		<VendorDescription>Gonzalo Villanueva</VendorDescription>
+	</AddIn>
+</RevitAddIns>
